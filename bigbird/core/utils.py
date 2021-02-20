@@ -55,8 +55,6 @@ def get_shape_list(tensor, expected_rank=None, name=None):
   if not non_static_indexes:
     return shape
 
-  assert False, "Static shape not available for {}".format(tensor)
-
   dyn_shape = tf.shape(tensor)
   for index in non_static_indexes:
     shape[index] = dyn_shape[index]
